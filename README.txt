@@ -8,3 +8,6 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         $ cd client
         $ npm install   // Install dependencies
         $ npm run dev   // Run app
+
+    - Tools
+        + Generate Favicons (URL: https://favicon.io/)
