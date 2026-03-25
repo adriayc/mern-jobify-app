@@ -36,5 +36,13 @@ export const login = async (req, res) => {
     role: user.role,
   });
 
-  res.json({ token });
+  // Attach token to cookie
+  const oneDay = 1000 * 60 * 60 * 24; // 1 day (millisecond)
+  res.cookie('token', token, {
+    httpOnly: true,
+    expires: new Date(Date.now() + oneDay),
+    secure: process.env.NODE_ENV === 'production',
+  });
+
+  res.status(StatusCodes.OK).json({ msg: 'user logged in' });
 };
