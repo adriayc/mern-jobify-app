@@ -73,6 +73,7 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                 {
                     "message": "hello world"
                 }
+        > GET: {{URL}}/jobss                                            => Click 'Send' (Error middleware!!!)
 
         * Job (Click '...' > Add folder | Name folder: Job)
             + Get All Jobs

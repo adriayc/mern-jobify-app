@@ -17,3 +17,13 @@
 ## Express.js
 
 [Express.js](https://expressjs.com/) is a minimal and flexible web framework for Node.js used to build web servers and APIs quickly.
+
+### Not Found and Error Middleware
+
+The "not found" middleware in Express.js is used when a request is made to a route that does not exist. It catches these requests and response with a 404 status code, indicating that the requested resource was not found.
+
+On the other hand, the "error" middleware in Express.js is used to handle any errors that occur during the processing of a request. It is typically used to catch unexpected errors or exceptions that are not explicitly handled in the application code. It logs the error and sends 500 status code, indicating an internal server error.
+
+In summary, the "not found" middleware is specifically designed to handle requests fro non-existent routes, while the "error" middleware is a catch-all handling unexpected errors that occur during request processing.
+
+- Make a request to "/jobss"
