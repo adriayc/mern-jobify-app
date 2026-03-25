@@ -65,6 +65,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install bcryptjs
         + JSON Web Token
             $ npm install jsonwebtoken
+        + Cookie Parser
+            $ npm install cookie-parser
 
     - Remove dependencies
         + Uninstall a single dependency
