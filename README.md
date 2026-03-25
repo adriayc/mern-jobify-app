@@ -8,6 +8,12 @@
 
 [Node.js](https://nodejs.org/en) is an open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside the browser, mainly for building server-side applications.
 
+### New Features
+
+- fetch API
+- global await
+- watch mode
+
 ## Express.js
 
 [Express.js](https://expressjs.com/) is a minimal and flexible web framework for Node.js used to build web servers and APIs quickly.

@@ -4,6 +4,22 @@ import morgan from 'morgan';
 
 const app = express();
 
+// Fetch API
+fetch('https://www.course-api.com/react-useReducer-card-project')
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+// Await
+try {
+  const response = await fetch(
+    'https://www.course-api.com/react-useReducer-card-project',
+  );
+  const cartData = await response.json();
+  console.log(cartData);
+} catch (error) {
+  console.log(error);
+}
+
 // Middlewares
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
