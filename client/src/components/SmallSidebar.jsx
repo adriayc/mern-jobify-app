@@ -10,13 +10,17 @@ import Logo from './Logo';
 import { NavLink } from 'react-router-dom';
 
 const SmallSidebar = () => {
-  const data = useDashboardContext();
+  const { showSidebar, toggleSidebar } = useDashboardContext();
 
   return (
     <Wrapper>
-      <div className="sidebar-container show-show-sidebar">
+      <div
+        className={
+          showSidebar ? 'sidebar-container show-sidebar' : 'sidebar-container'
+        }
+      >
         <div className="content">
-          <button type="button" className="close-btn">
+          <button type="button" className="close-btn" onClick={toggleSidebar}>
             <FaTimes />
           </button>
           <header>
@@ -26,7 +30,13 @@ const SmallSidebar = () => {
             {links.map((link) => {
               const { text, path, icon } = link;
               return (
-                <NavLink key={text} to={path} className="nav-link">
+                <NavLink
+                  key={text}
+                  to={path}
+                  className="nav-link"
+                  onClick={toggleSidebar}
+                  end // Remove 'active' class
+                >
                   <span className="icon">{icon}</span>
                   {text}
                 </NavLink>
