@@ -91,8 +91,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                 > POST: {{URL}}/jobs                                    => Click 'Send'
                     > Body > Row > JSON
                         {
-                            "company": "facebook",
-                            "position": "full-stack"
+                            "company": "huawei",
+                            "position": "front-end",
+                            "jobStatus": "pending",
+                            "jobLocation": "florida"
                         }
             + Get Single Job
                 > GET: {{URL}}/jobs/{{JOB_ID}}                          => Click 'Send'
@@ -100,8 +102,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                 > PATCH: {{URL}}/jobs/{{JOB_ID}}                        => Click 'Send'
                     > Body > Row > JSON
                         {
-                            "company": "lenovo",
-                            "position": "java developer"
+                            "company": "huawei",
+                            "position": "backed-end",
+                            "jobStatus": "pending",
+                            "jobLocation": "florida"
                         }
             + Delete Job
                 > DELETE: {{URL}}/jobs/{{JOB_ID}}                       => Click 'Send'
