@@ -97,9 +97,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                 > POST: {{URL}}/jobs                                    => Click 'Send'
                     > Body > Row > JSON
                         {
-                            "company": "huawei",
+                            "company": "apple",
                             "position": "front-end",
                             "jobStatus": "pending",
+                            "jobType": "full-time",
                             "jobLocation": "florida"
                         }
             + Get Single Job
@@ -131,7 +132,7 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                     > Body > Row > JSON
                         {
                             "email": "adriano@mail.com",
-                            "password": "adriano123"
+                            "password": "secret123"
                         }
 
 * HTTP response status codes
