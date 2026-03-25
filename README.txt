@@ -36,10 +36,16 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         $ npm inti -y
         $ node server       // Run single file
         $ npm run setup-project     // Setup project
+        $ npm run dev               // Run app
 
     - Install dependencies
         + All libraries (Optional)
             $ npm install express nodemon dotenv mongoose express-async-errors express-validator http-status-codes bcryptjs jsonwebtoken concurrently cookie-parser dayjs morgan multer nanoid
+
+        + Express.js
+            $ npm install express --save
+        + Nodemon
+            $ npm i nodemon
 
     - Remove dependencies
         + Uninstall a single dependency
