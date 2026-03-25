@@ -6,6 +6,7 @@ import Wrapper from '../assets/wrappers/Navbar';
 // Components
 import Logo from './Logo';
 import LogoutContainer from './LogoutContainer';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const { toggleSidebar } = useDashboardContext();
@@ -24,6 +25,7 @@ const Navbar = () => {
         </div>
         {/* LOGOUT */}
         <div className="btn-container">
+          <ThemeToggle />
           <LogoutContainer />
         </div>
       </div>
