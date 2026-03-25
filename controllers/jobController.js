@@ -8,7 +8,9 @@ let jobs = [
 ];
 
 export const getAllJobs = async (req, res) => {
-  return res.status(200).json({ jobs });
+  const jobs = await Job.find({});
+
+  res.status(200).json({ jobs });
 };
 
 export const createJob = async (req, res) => {
@@ -20,9 +22,9 @@ export const createJob = async (req, res) => {
 export const getSingleJob = async (req, res) => {
   const { id } = req.params;
 
-  const job = jobs.find((job) => job.id === id);
+  const job = await Job.findById(id);
   if (!job) {
-    throw new Error(`no job with id ${id}`);
+    return res.status(404).json({ msg: `no job with id ${id}` });
   }
 
   res.status(200).json({ job });
