@@ -27,3 +27,4 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
 
     - Tools
         + Generate Favicons (URL: https://favicon.io/)
+        + Cool Images (URL: https://undraw.co/)
