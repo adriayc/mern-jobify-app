@@ -8,6 +8,7 @@ import jobRouter from './routes/jobRouter.js';
 import authRouter from './routes/authRouter.js';
 // Custom middlewares
 import errorHandleMiddleware from './middleware/errorHandlerMiddleware.js';
+import { authenticateUse } from './middleware/authMiddleware.js';
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.get('/', (req, res) => {
   res.send('Hello world');
 });
 
-app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/jobs', authenticateUse, jobRouter);
 app.use('/api/v1/auth', authRouter);
 
 // Custom middlewares
