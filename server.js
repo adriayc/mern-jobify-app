@@ -5,6 +5,8 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 // Routers
 import jobRouter from './routes/jobRouter.js';
+// Custom middlewares
+import errorHandleMiddleware from './middleware/errorHandlerMiddleware.js';
 
 const app = express();
 
@@ -31,11 +33,7 @@ app.use('/api/v1/jobs', jobRouter);
 app.use((req, res) => {
   res.status(404).json({ msg: 'not found' });
 });
-// Error
-app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ msg: 'something went wrong' });
-});
+app.use(errorHandleMiddleware);
 
 const port = process.env.PORT || 5000;
 try {
