@@ -61,6 +61,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install http-status-codes --save
         + Express Validator
             $ npm install express-validator
+        + Bcryptjs
+            $ npm install bcryptjs
 
     - Remove dependencies
         + Uninstall a single dependency
