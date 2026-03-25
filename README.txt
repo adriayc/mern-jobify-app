@@ -93,3 +93,5 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                             "company": "lenovo",
                             "position": "java developer"
                         }
+            + Delete Job
+                > DELETE: {{URL}}/jobs/{{JOB_ID}}                       => Click 'Send'
