@@ -77,3 +77,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         * Job (Click '...' > Add folder | Name folder: Job)
             + Get All Jobs
                 > GET: {{URL}}/jobs                                     => Click 'Send'
+            + Create Job
+                > POST: {{URL}}/jobs                                    => Click 'Send'
+                    > Body > Row > JSON
+                        {
+                            "company": "facebook",
+                            "position": "full-stack"
+                        }
