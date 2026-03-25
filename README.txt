@@ -144,7 +144,12 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             + Update User
                 > PATCH: {{URL}}/users/update-user                      => Click 'Send'
                     > Body > Row > JSON
-                        { }
+                        {
+                            "name": "adriano",
+                            "email": "adriano@mail.com",
+                            "lastName": "ayala",
+                            "location": "my city"
+                        }
 
 * HTTP response status codes
     - 200 OK Ok
