@@ -67,6 +67,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install jsonwebtoken
         + Cookie Parser
             $ npm install cookie-parser
+        + concurrently
+            $ npm i concurrently
 
     - Remove dependencies
         + Uninstall a single dependency
