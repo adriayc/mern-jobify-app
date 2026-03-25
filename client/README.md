@@ -1,0 +1,1 @@
+# JOBIFY (React + Vite)
