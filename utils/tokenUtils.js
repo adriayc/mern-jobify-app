@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt, { decode } from 'jsonwebtoken';
 
 export const createJWT = (payload) => {
   const token = jwt.sign(payload, process.env.JWT_SECRET, {
@@ -6,4 +6,10 @@ export const createJWT = (payload) => {
   });
 
   return token;
+};
+
+export const verifyJTW = (token) => {
+  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+  return decoded;
 };
