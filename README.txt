@@ -52,3 +52,9 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm uninstall PACKAGE-NAME
         + Uninstall a dev dependency
             $ npm uninstall PACKAGE_NAME --save-dev
+
+* Postman
+    - Create Workspace > Black workspace | Click 'Next' > Name: Ax2cDev | Select workspace type: Internal | Click 'Create'
+        + Create New Collection > Blank Collection > Name: store-api
+            * Add a request > Name: Get Hello World | GET: http://localhost:5000/ | Click 'Send'
+            
