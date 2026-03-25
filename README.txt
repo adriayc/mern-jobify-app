@@ -86,3 +86,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                         }
             + Get Single Job
                 > GET: {{URL}}/jobs/{{JOB_ID}}                          => Click 'Send'
+            + Update Job
+                > PATCH: {{URL}}/jobs/{{JOB_ID}}                        => Click 'Send'
+                    > Body > Row > JSON
+                        {
+                            "company": "lenovo",
+                            "position": "java developer"
+                        }
