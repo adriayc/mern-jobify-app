@@ -50,6 +50,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm i morgan
         + DotENV
             $ npm install dotenv --save
+        + NanoID
+            $ npm i nanoid
 
     - Remove dependencies
         + Uninstall a single dependency
@@ -62,10 +64,16 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         + Create New Collection > Blank Collection > Name: store-api
             * Add a request > Name: Get Hello World | GET: http://localhost:5000/ | Click 'Send'
     
+    - Variables in this request > Globals
+        > URL         http://localhost:5000/api/v1
+    
     - HTTP request
-        * Test request
-            > POST: http://localhost:5000/                                          => Click 'Send'
-                > Body > Row > JSON
-                    {
-                        "message": "hello world"
-                    }
+        > POST: {{URL}}/jobs                                            => Click 'Send'
+            > Body > Row > JSON
+                {
+                    "message": "hello world"
+                }
+
+        * Job (Click '...' > Add folder | Name folder: Job)
+            + Get All Jobs
+                > GET: {{URL}}/jobs                                     => Click 'Send'

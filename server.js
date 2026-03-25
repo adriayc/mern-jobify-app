@@ -1,24 +1,14 @@
 import 'dotenv/config';
 import express from 'express';
 import morgan from 'morgan';
+import { nanoid } from 'nanoid';
 
 const app = express();
 
-// Fetch API
-fetch('https://www.course-api.com/react-useReducer-card-project')
-  .then((res) => res.json())
-  .then((data) => console.log(data));
-
-// Await
-try {
-  const response = await fetch(
-    'https://www.course-api.com/react-useReducer-card-project',
-  );
-  const cartData = await response.json();
-  console.log(cartData);
-} catch (error) {
-  console.log(error);
-}
+let jobs = [
+  { id: nanoid(), company: 'apple', position: 'front-end' },
+  { id: nanoid(), company: 'google', position: 'back-end' },
+];
 
 // Middlewares
 if (process.env.NODE_ENV === 'development') {
@@ -33,6 +23,10 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   console.log(req);
   res.json({ message: 'data received', data: req.body });
+});
+// Get All Jobs
+app.get('/api/v1/jobs', (req, res) => {
+  return res.status(200).json({ jobs });
 });
 
 const port = process.env.PORT || 5000;
