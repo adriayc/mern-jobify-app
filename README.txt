@@ -136,6 +136,15 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                         }
             + Logout User
                 > DELETE: {{URL}}/auth/logout                           => Click 'Send'
+        * Auth (Click '...' > Add folder | Name folder: User)
+            + Get Current User
+                > GET: {{URL}}/users/current-user                       => Click 'Send'
+            + Get Application Stats
+                > GET: {{URL}}/users/admin/app-stats                    => Click 'Send'
+            + Update User
+                > PATCH: {{URL}}/users/update-user                      => Click 'Send'
+                    > Body > Row > JSON
+                        { }
 
 * HTTP response status codes
     - 200 OK Ok

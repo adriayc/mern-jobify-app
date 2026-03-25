@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 // Routers
 import jobRouter from './routes/jobRouter.js';
 import authRouter from './routes/authRouter.js';
+import userRouter from './routes/userRouter.js';
 // Custom middlewares
 import errorHandleMiddleware from './middleware/errorHandlerMiddleware.js';
 import { authenticateUse } from './middleware/authMiddleware.js';
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/jobs', authenticateUse, jobRouter);
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/users', authenticateUse, userRouter);
 
 // Custom middlewares
 // Not Found
