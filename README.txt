@@ -59,6 +59,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install express-async-errors --save
         + HTTP Status Codes
             $ npm install http-status-codes --save
+        + Express Validator
+            $ npm install express-validator
 
     - Remove dependencies
         + Uninstall a single dependency
@@ -75,10 +77,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         > URL         http://localhost:5000/api/v1
     
     - HTTP request
-        > POST: {{URL}}/jobs                                            => Click 'Send'
+        > POST: {{URL}}/test                                            => Click 'Send'
             > Body > Row > JSON
                 {
-                    "message": "hello world"
+                    "name": "adriano"
                 }
         > GET: {{URL}}/jobss                                            => Click 'Send' (Error middleware!!!)
 
