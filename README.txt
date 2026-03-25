@@ -9,5 +9,16 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         $ npm install   // Install dependencies
         $ npm run dev   // Run app
 
+    - Install dependencies
+        + All libraries (Optional)
+            $ npm install @tanstack/react-query axios dayjs react-icons react-router-dom react-toastify recharts styled-components
+
+    - Remove dependencies
+        + Regular dependencies
+            $ npm uninstall {{PACKAGE_NAME}}
+        + Development dependencies 
+            $ npm uninstall {{PACKAGE_NAME}} --save-dev
+            $ npm uninstall {{PACKAGE_NAME}} -D
+
     - Tools
         + Generate Favicons (URL: https://favicon.io/)
