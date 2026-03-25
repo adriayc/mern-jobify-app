@@ -30,3 +30,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
     - Tools
         + Generate Favicons (URL: https://favicon.io/)
         + Cool Images (URL: https://undraw.co/)
+
+* Back-End
+    - Initialize the app
+        $ npm inti -y
+        $ node server       // Run single file
