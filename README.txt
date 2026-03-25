@@ -128,12 +128,14 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                             "location": "my city"
                         }
             + Login User
-                > POST: {{URL}}/auth                                    => Click 'Send'
+                > POST: {{URL}}/auth/login                              => Click 'Send'
                     > Body > Row > JSON
                         {
                             "email": "adriano@mail.com",
                             "password": "secret123"
                         }
+            + Logout User
+                > DELETE: {{URL}}/auth/logout                           => Click 'Send'
 
 * HTTP response status codes
     - 200 OK Ok
