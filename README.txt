@@ -12,6 +12,9 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
     - Install dependencies
         + All libraries (Optional)
             $ npm install @tanstack/react-query axios dayjs react-icons react-router-dom react-toastify recharts styled-components
+        
+        + React-Router-Dom
+            $ npm i react-router-dom
 
     - Remove dependencies
         + Regular dependencies
