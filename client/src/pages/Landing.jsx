@@ -1,23 +1,42 @@
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+// Wrappers
+import Wrapper from '../assets/wrappers/LandingPage';
+// Images
+import main from '../assets/images/main.svg';
+import logo from '../assets/images/logo.svg';
 
 const Landing = () => {
   return (
     <Wrapper>
-      <h1>Landing Page</h1>
-      <div className="content">some content</div>
+      <nav>
+        <img src={logo} alt="jobify" className="logo" />
+      </nav>
+      <div className="container page">
+        <div className="info">
+          <h1>
+            job <span>tracking</span> app
+          </h1>
+          <p>
+            Blackbird spyplane meggings raclette 3 wolf moon, letterpress
+            butcher squid chartreuse snackwave same asymmetrical disrupt tousled
+            beard. Umami JOMO celiac jawn craft beer. Man bun ascot 3 wolf moon
+            woke, chambray palo santo pok pok pug poke enamel pin disrupt lomo
+            jianbing thundercats seitan. PBR&B pinterest actually gastropub woke
+            hexagon jianbing tumblr direct trade viral. Waistcoat art party
+            dreamcatcher pickled, tote bag migas synth master cleanse DIY health
+            goth.
+          </p>
+          <Link to="/register" className="btn register-link">
+            Register
+          </Link>
+          <Link to="/login" className="btn login-link">
+            Login / Demo User
+          </Link>
+        </div>
+        <img src={main} alt="job hunt" className="img main-img" />
+      </div>
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  background: red;
-  h1 {
-    color: white;
-  }
-  .content {
-    background: blue;
-    color: yellow;
-  }
-`;
 
 export default Landing;
