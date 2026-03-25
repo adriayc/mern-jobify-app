@@ -57,4 +57,11 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
     - Create Workspace > Black workspace | Click 'Next' > Name: Ax2cDev | Select workspace type: Internal | Click 'Create'
         + Create New Collection > Blank Collection > Name: store-api
             * Add a request > Name: Get Hello World | GET: http://localhost:5000/ | Click 'Send'
-            
+    
+    - HTTP request
+        * Test request
+            > POST: http://localhost:5000/                                          => Click 'Send'
+                > Body > Row > JSON
+                    {
+                        "message": "hello world"
+                    }
