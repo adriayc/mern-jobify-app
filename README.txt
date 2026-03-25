@@ -17,6 +17,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm i react-router-dom
         + Styled Components
             $ npm install styled-components
+        + React-icons
+            $ npm install react-icons --save
 
     - Remove dependencies
         + Regular dependencies
