@@ -4,6 +4,7 @@
   "description": "Node.js, Express.js (with ES6 Module), MongoDB and JWT",
   "main": "index.js",
   "scripts": {
+    "setup-project": "npm i && cd client && npm i",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
