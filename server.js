@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 // Routers
 import jobRouter from './routes/jobRouter.js';
+import authRouter from './routes/authRouter.js';
 // Custom middlewares
 import errorHandleMiddleware from './middleware/errorHandlerMiddleware.js';
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/auth', authRouter);
 
 // Custom middlewares
 // Not Found

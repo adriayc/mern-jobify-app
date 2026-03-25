@@ -109,6 +109,15 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                         }
             + Delete Job
                 > DELETE: {{URL}}/jobs/{{JOB_ID}}                       => Click 'Send'
+        * Auth (Click '...' > Add folder | Name folder: Auth)
+            + Create User
+                > POST: {{URL}}/auth                                    => Click 'Send'
+                    > Body > Row > JSON
+                        { }
+            + Login User
+                > POST: {{URL}}/auth                                    => Click 'Send'
+                    > Body > Row > JSON
+                        { }
 
 * HTTP response status codes
     - 200 OK Ok
