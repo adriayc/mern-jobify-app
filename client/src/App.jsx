@@ -14,6 +14,16 @@ import {
   Admin,
 } from './pages';
 
+// Get from local storage
+const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+  // Add the class dark-them to the body tag
+  document.body.classList.toggle('dark-theme', isDarkTheme);
+  return isDarkTheme;
+};
+
+const isDarkThemeEnabled = checkDefaultTheme();
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -34,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <DashboardLayout />,
+        element: <DashboardLayout isDarkThemeEnabled={isDarkThemeEnabled} />,
         children: [
           {
             index: true,

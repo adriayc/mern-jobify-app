@@ -8,14 +8,19 @@ import { SmallSidebar, BigSidebar, Navbar } from '../components';
 // Create context
 const DashboardContext = createContext();
 
-const DashboardLayout = () => {
+const DashboardLayout = ({ isDarkThemeEnabled }) => {
   // Temp
   const user = { name: 'john' };
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
 
   const toggleDarkTheme = () => {
-    console.log('toggle dark theme');
+    const newDarkTheme = !isDarkTheme;
+    setIsDarkTheme(newDarkTheme);
+    // Add the class dark-them to the body tag
+    document.body.classList.toggle('dark-theme', newDarkTheme);
+    // Set the theme value to local storage
+    localStorage.setItem('darkTheme', newDarkTheme);
   };
 
   const toggleSidebar = () => {
