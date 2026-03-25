@@ -19,6 +19,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install styled-components
         + React-icons
             $ npm install react-icons --save
+        + Axios
+            $ npm install axios
 
     - Remove dependencies
         + Regular dependencies
