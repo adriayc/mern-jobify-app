@@ -44,6 +44,7 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
 
         + Express.js
             $ npm install express --save
+            $ npm install express@4.x --save        // ExpressJS Async Errors
         + Nodemon
             $ npm i nodemon
         + Morgan
@@ -54,6 +55,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm i nanoid
         + Mongoose
             $ npm install mongoose
+        + ExpressJS Async Errors
+            $ npm install express-async-errors --save
 
     - Remove dependencies
         + Uninstall a single dependency
