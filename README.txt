@@ -52,6 +52,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install dotenv --save
         + NanoID
             $ npm i nanoid
+        + Mongoose
+            $ npm install mongoose
 
     - Remove dependencies
         + Uninstall a single dependency
