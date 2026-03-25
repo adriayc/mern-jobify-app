@@ -27,3 +27,7 @@ On the other hand, the "error" middleware in Express.js is used to handle any er
 In summary, the "not found" middleware is specifically designed to handle requests fro non-existent routes, while the "error" middleware is a catch-all handling unexpected errors that occur during request processing.
 
 - Make a request to "/jobss"
+
+## MongoDB
+
+[MongoDB](https://www.mongodb.com/) is an open-source, NoSQL database that stores data in flexible, JSON-like documents instead of traditional tables and rows.
