@@ -84,3 +84,5 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                             "company": "facebook",
                             "position": "full-stack"
                         }
+            + Get Single Job
+                > GET: {{URL}}/jobs/{{JOB_ID}}                          => Click 'Send'
