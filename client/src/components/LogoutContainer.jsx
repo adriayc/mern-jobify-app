@@ -8,7 +8,7 @@ import { FaCaretDown, FaUserCircle } from 'react-icons/fa';
 const LogoutContainer = () => {
   const { user, logoutUser } = useDashboardContext();
 
-  const [showLogout, setShowLogout] = useState(false);
+  const [showLogout, setShowLogout] = useState(true);
 
   return (
     <Wrapper>
