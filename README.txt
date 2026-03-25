@@ -57,6 +57,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install mongoose
         + ExpressJS Async Errors
             $ npm install express-async-errors --save
+        + HTTP Status Codes
+            $ npm install http-status-codes --save
 
     - Remove dependencies
         + Uninstall a single dependency
@@ -101,3 +103,12 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                         }
             + Delete Job
                 > DELETE: {{URL}}/jobs/{{JOB_ID}}                       => Click 'Send'
+
+* HTTP response status codes
+    - 200 OK Ok
+    - 201 CREATED Created
+    - 400 BAD_REQUEST Bac Request
+    - 401 UNAUTHORIZED Unauthorized
+    - 403 FORBIDDEN Forbidden
+    - 404 NOT_FOUND Not Found
+    
