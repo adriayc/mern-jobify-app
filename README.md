@@ -31,3 +31,7 @@ In summary, the "not found" middleware is specifically designed to handle reques
 ## MongoDB
 
 [MongoDB](https://www.mongodb.com/) is an open-source, NoSQL database that stores data in flexible, JSON-like documents instead of traditional tables and rows.
+
+### MongoDB Atlas
+
+[MongoDB Atlas](https://cloud.mongodb.com/) is a fully managed cloud database service for running MongoDB on cloud platform like Amazon Web Service, Google Cloud, and Microsoft Azure.
