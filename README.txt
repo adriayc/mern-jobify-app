@@ -113,7 +113,13 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             + Create User
                 > POST: {{URL}}/auth                                    => Click 'Send'
                     > Body > Row > JSON
-                        { }
+                        {
+                            "name": "adriano",
+                            "email": "adriano@mail.com",
+                            "password": "adriano123",
+                            "lastName": "ayala",
+                            "location": "my city"
+                        }
             + Login User
                 > POST: {{URL}}/auth                                    => Click 'Send'
                     > Body > Row > JSON
