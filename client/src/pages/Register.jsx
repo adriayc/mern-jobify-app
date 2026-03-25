@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 // Wrappers
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 // Components;
-import { Logo } from '../components';
+import { FormRow, Logo } from '../components';
 
 const Register = () => {
   return (
@@ -10,19 +10,21 @@ const Register = () => {
       <form className="form">
         <Logo />
         <h4>Register</h4>
-        <div className="form-row">
-          <label htmlFor="name" className="form-label">
-            name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="form-input"
-            defaultValue="adriano"
-            required
-          />
-        </div>
+        {/* NAME */}
+        <FormRow type="text" name="name" defaultValue="adriano" />
+        {/* LAST NAME */}
+        <FormRow
+          type="text"
+          name="lastName"
+          labelText="last name"
+          defaultValue="ayala"
+        />
+        {/* LOCATION */}
+        <FormRow type="text" name="location" defaultValue="earth" />
+        {/* EMAIL */}
+        <FormRow type="email" name="email" defaultValue="adriano@mail.com" />
+        {/* PASSWORD */}
+        <FormRow type="password" name="password" defaultValue="adriano123" />
         <button type="submit" className="btn btn-block">
           submit
         </button>
