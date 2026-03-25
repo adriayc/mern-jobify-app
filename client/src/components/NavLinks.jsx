@@ -4,7 +4,7 @@ import { useDashboardContext } from '../pages/DashboardLayout';
 // Utils
 import links from '../utils/links';
 
-const NavLinks = () => {
+const NavLinks = ({ isBigSidebar }) => {
   const { toggleSidebar } = useDashboardContext();
 
   return (
@@ -16,7 +16,7 @@ const NavLinks = () => {
             key={text}
             to={path}
             className="nav-link"
-            onClick={toggleSidebar}
+            onClick={isBigSidebar ? null : toggleSidebar}
             end // Remove 'active' class
           >
             <span className="icon">{icon}</span>
