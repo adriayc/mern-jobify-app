@@ -46,6 +46,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install express --save
         + Nodemon
             $ npm i nodemon
+        + Morgan
+            $ npm i morgan
+        + DotENV
+            $ npm install dotenv --save
 
     - Remove dependencies
         + Uninstall a single dependency
