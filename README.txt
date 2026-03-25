@@ -63,6 +63,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install express-validator
         + Bcryptjs
             $ npm install bcryptjs
+        + JSON Web Token
+            $ npm install jsonwebtoken
 
     - Remove dependencies
         + Uninstall a single dependency
