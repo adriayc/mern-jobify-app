@@ -125,7 +125,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             + Login User
                 > POST: {{URL}}/auth                                    => Click 'Send'
                     > Body > Row > JSON
-                        { }
+                        {
+                            "email": "adriano@mail.com",
+                            "password": "adriano123"
+                        }
 
 * HTTP response status codes
     - 200 OK Ok
