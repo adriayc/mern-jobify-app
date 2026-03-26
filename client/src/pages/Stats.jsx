@@ -5,13 +5,15 @@ import { ChartsContainer, StatsContainer } from '../components';
 
 // Loaders
 export const loader = async () => {
-  try {
-    const response = await customFetch.get('/jobs/stats');
-    return response.data;
-  } catch (error) {
-    // console.log(error);
-    return error;
-  }
+  // try {
+  //   const response = await customFetch.get('/jobs/statss');
+  //   return response.data;
+  // } catch (error) {
+  //   // console.log(error);
+  //   return error;
+  // }
+  const response = await customFetch.get('/jobs/statss');
+  return response.data;
 };
 
 const Stats = () => {
