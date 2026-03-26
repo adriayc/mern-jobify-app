@@ -48,6 +48,11 @@ app.use('/api/v1/jobs', authenticateUse, jobRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', authenticateUse, userRouter);
 
+// Front-end
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+});
+
 // Custom middlewares
 // Not Found
 // app.use('*', (req, res) => { // Error (Express 5.x)

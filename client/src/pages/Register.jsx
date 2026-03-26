@@ -31,20 +31,36 @@ const Register = () => {
         <Logo />
         <h4>Register</h4>
         {/* NAME */}
-        <FormRow type="text" name="name" defaultValue="john" />
+        <FormRow
+          type="text"
+          name="name"
+          // defaultValue="john"
+        />
         {/* LAST NAME */}
         <FormRow
           type="text"
           name="lastName"
           labelText="last name"
-          defaultValue="doe"
+          // defaultValue="doe"
         />
         {/* LOCATION */}
-        <FormRow type="text" name="location" defaultValue="earth" />
+        <FormRow
+          type="text"
+          name="location"
+          // defaultValue="earth"
+        />
         {/* EMAIL */}
-        <FormRow type="email" name="email" defaultValue="john@mail.com" />
+        <FormRow
+          type="email"
+          name="email"
+          // defaultValue="john@mail.com"
+        />
         {/* PASSWORD */}
-        <FormRow type="password" name="password" defaultValue="secret123" />
+        <FormRow
+          type="password"
+          name="password"
+          // defaultValue="secret123"
+        />
         {/* Submit Btn */}
         <SubmitBtn />
         <p>
