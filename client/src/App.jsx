@@ -15,6 +15,7 @@ import {
 } from './pages';
 // Actions
 import { action as registerAction } from './pages/Register';
+import { action as loginAction } from './pages/Login';
 
 // Get from local storage
 export const checkDefaultTheme = () => {
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login />,
+        action: loginAction,
       },
       {
         path: 'dashboard',
