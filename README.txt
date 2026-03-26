@@ -25,6 +25,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm i --save react-toastify
         + Day.js
             $ npm install dayjs
+        + Recharts
+            $ npm install recharts
 
     - Remove dependencies
         + Regular dependencies
