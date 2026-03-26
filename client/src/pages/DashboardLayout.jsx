@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { Outlet, redirect, useNavigate, useNavigation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useQuery } from '@tanstack/react-query';
@@ -39,6 +39,7 @@ const DashboardLayout = ({ queryClient }) => {
   const isPageLoading = navigation.state === 'loading';
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
+  const [isAuthError, setIsAuthError] = useState(false);
 
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
@@ -60,6 +61,24 @@ const DashboardLayout = ({ queryClient }) => {
     toast.success('Logging out...');
     navigate('/');
   };
+
+  // Axios interceptors
+  customFetch.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      if (error?.response?.status === 401) {
+        setIsAuthError(true);
+      }
+      return Promise.reject(error);
+    },
+  );
+
+  useEffect(() => {
+    if (!isAuthError) return;
+    logoutUser();
+  }, [isAuthError]);
 
   return (
     <DashboardContext.Provider
