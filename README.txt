@@ -80,6 +80,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install multer
         + Cloudinary
             $ npm i cloudinary
+        + Dayjs
+            $ npm install dayjs
 
     - Remove dependencies
         + Uninstall a single dependency
