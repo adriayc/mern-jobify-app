@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { StatusCodes } from 'http-status-codes';
 // Models
 import Job from '../models/JobModel.js';
@@ -37,10 +38,21 @@ export const deleteJob = async (req, res) => {
 };
 
 export const showStats = async (req, res) => {
+  let stats = await Job.aggregate([
+    { $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } }, // Match by createdBy
+    { $group: { _id: '$jobStatus', count: { $sum: 1 } } }, // Group by jobStatus and count
+  ]);
+  stats = stats.reduce((acc, curr) => {
+    const { _id: title, count } = curr;
+    acc[title] = count;
+    return acc;
+  }, {});
+  // console.log(stats);
+
   const defaultStats = {
-    pending: 22,
-    interview: 11,
-    declined: 4,
+    pending: stats.pending || 0,
+    interview: stats.interview || 0,
+    declined: stats.declined || 0,
   };
 
   let monthlyApplications = [
