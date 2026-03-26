@@ -4,6 +4,10 @@ import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
+// Public
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import path from 'path';
 // Routers
 import jobRouter from './routes/jobRouter.js';
 import authRouter from './routes/authRouter.js';
@@ -14,10 +18,13 @@ import { authenticateUse } from './middleware/authMiddleware.js';
 
 const app = express();
 
+const __dirname = dirname(fileURLToPath(import.meta.url)); // Get path
+
 // Middlewares
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+app.use(express.static(path.resolve(__dirname, './public'))); // Enable public folder
 app.use(express.json());
 app.use(cookieParser());
 
