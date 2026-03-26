@@ -1,3 +1,4 @@
+import { createContext, useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 // Utils
@@ -17,16 +18,22 @@ export const loader = async () => {
   }
 };
 
+// Create context
+const AllJobsContext = createContext();
+
 const AllJobs = () => {
   const { data } = useLoaderData();
   console.log(data);
 
   return (
-    <>
+    <AllJobsContext.Provider value={{ data }}>
       <SearchContainer />
       <JobsContainer />
-    </>
+    </AllJobsContext.Provider>
   );
 };
+
+// Custom hook (Context)
+export const useAllJobsContext = () => useContext(AllJobsContext);
 
 export default AllJobs;
