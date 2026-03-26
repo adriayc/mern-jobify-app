@@ -3,7 +3,7 @@ import {
   Link,
   redirect,
   useActionData,
-  useNavigation,
+  useNavigate,
 } from 'react-router-dom';
 import { toast } from 'react-toastify';
 // Wrappers
@@ -11,7 +11,7 @@ import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 // Utils
 import customFetch from '../utils/customFetch';
 // Components
-import { FormRow, Logo } from '../components';
+import { FormRow, Logo, SubmitBtn } from '../components';
 
 // Actions
 export const action = async ({ request }) => {
@@ -36,8 +36,21 @@ export const action = async ({ request }) => {
 
 const Login = () => {
   const errors = useActionData();
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const navigate = useNavigate();
+
+  const loginDemoUse = async () => {
+    try {
+      const data = {
+        email: 'test@test.com',
+        password: 'secret123',
+      };
+      await customFetch.post('/auth/login', data);
+      toast.success('Login successfully');
+      navigate('/dashboard');
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+    }
+  };
 
   return (
     <Wrapper>
@@ -49,10 +62,9 @@ const Login = () => {
         <FormRow type="text" name="email" defaultValue="john@mail.com" />
         {/* PASSWORD */}
         <FormRow type="password" name="password" defaultValue="secret123" />
-        <button type="submit" className="btn btn-block" disabled={isSubmitting}>
-          {isSubmitting ? 'submitting...' : 'submit'}
-        </button>
-        <button type="button" className="btn btn-block">
+        {/* Submit Btn */}
+        <SubmitBtn />
+        <button type="button" className="btn btn-block" onClick={loginDemoUse}>
           explore the app
         </button>
         <p>

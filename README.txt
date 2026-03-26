@@ -43,6 +43,7 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         $ node server       // Run single file
         $ npm run setup-project     // Setup project
         $ npm run dev               // Run app
+        $ node populate             // Populate DB
 
     - Install dependencies
         + All libraries (Optional)
@@ -75,6 +76,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install cookie-parser
         + concurrently
             $ npm i concurrently
+        + Multer
+            $ npm install multer
+        + Cloudinary
+            $ npm i cloudinary
 
     - Remove dependencies
         + Uninstall a single dependency
@@ -166,4 +171,17 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
     - 401 UNAUTHORIZED Unauthorized
     - 403 FORBIDDEN Forbidden
     - 404 NOT_FOUND Not Found
+    
+* Mockaroo (URL: https://www.mockaroo.com/)
+    File Name       Type            Options
+    company         Company Name
+    position        Job Title
+    jobLocation     City
+    jobStatus       Custom List     pending,declined,interview
+    jobType         Custom List     full-time,part-time,internship
+    createdAt       Datetime        01/01/2025  to 03/20/2026   format: ISO 8601 (UTC)
+
+    # Rows: 100     Format: JSON    array: true     include null values: false
+
+    Click 'GENERATE DATA' or 'PREVIEW'
     
