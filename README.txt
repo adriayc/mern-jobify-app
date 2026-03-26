@@ -53,9 +53,12 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         > Copy all contents of '/client/dist' to '/public'
         $ node server               // Run app for production (Local URL: http://localhost:5000/)
 
+        $ npm run setup-production-app      // Run setup for production (server: npm i and client: npm i && npm run build )
+        $ node server
+
     - Install dependencies
         + All libraries (Optional)
-            $ npm install express nodemon dotenv mongoose express-async-errors express-validator http-status-codes bcryptjs jsonwebtoken concurrently cookie-parser dayjs morgan multer nanoid
+            $ npm install express nodemon dotenv mongoose express-async-errors express-validator http-status-codes bcryptjs jsonwebtoken concurrently cookie-parser dayjs morgan multer nanoid                  // Run app for production (Local URL: http://localhost:5000/)
 
         + Express.js
             $ npm install express --save
