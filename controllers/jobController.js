@@ -5,17 +5,28 @@ import dayjs from 'dayjs';
 import Job from '../models/JobModel.js';
 
 export const getAllJobs = async (req, res) => {
-  console.log(req.query); // Get query params
-  const jobs = await Job.find({
+  // Query params
+  const { search } = req.query;
+
+  // Query object
+  const queryObject = {
     createdBy: req.user.userId,
-    position: req.query.search,
-  });
+  };
+
+  // Search (position or company)
+  if (search) {
+    queryObject.$or = [
+      { position: { $regex: search, $options: 'i' } },
+      { company: { $regex: search, $options: 'i' } },
+    ];
+  }
+
+  const jobs = await Job.find(queryObject);
 
   res.status(StatusCodes.OK).json({ jobs }); // 200
 };
 
 export const createJob = async (req, res) => {
-  console.log(req.body);
   req.body.createdBy = req.user.userId;
   const job = await Job.create(req.body);
 
