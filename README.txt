@@ -15,6 +15,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         
         + React-Router-Dom
             $ npm i react-router-dom
+        + Styled Components
+            $ npm install styled-components
 
     - Remove dependencies
         + Regular dependencies
@@ -25,3 +27,4 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
 
     - Tools
         + Generate Favicons (URL: https://favicon.io/)
+        + Cool Images (URL: https://undraw.co/)
