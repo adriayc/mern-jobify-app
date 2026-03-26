@@ -16,7 +16,7 @@ export const loader = async ({ request }) => {
 
   try {
     const { data } = await customFetch.get('/jobs', { params });
-    return { data };
+    return { data, searchValues: { ...params } };
   } catch (error) {
     // console.log(error);
     toast.error(error?.response?.data?.msg);
@@ -28,11 +28,11 @@ export const loader = async ({ request }) => {
 const AllJobsContext = createContext();
 
 const AllJobs = () => {
-  const { data } = useLoaderData();
-  // console.log(data);
+  const { data, searchValues } = useLoaderData();
+  // console.log(searchValues);
 
   return (
-    <AllJobsContext.Provider value={{ data }}>
+    <AllJobsContext.Provider value={{ data, searchValues }}>
       <SearchContainer />
       <JobsContainer />
     </AllJobsContext.Provider>
