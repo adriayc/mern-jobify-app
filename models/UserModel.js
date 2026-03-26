@@ -1,0 +1,29 @@
+import mongoose from 'mongoose';
+
+const UserSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  password: String,
+  lastName: {
+    type: String,
+    default: 'lastName',
+  },
+  location: {
+    type: String,
+    default: 'my city',
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user',
+  },
+});
+
+UserSchema.methods.toJSON = function () {
+  let obj = this.toObject(); // Converting to object
+  delete obj.password; // Delete password property
+
+  return obj;
+};
+
+export default mongoose.model('User', UserSchema);
