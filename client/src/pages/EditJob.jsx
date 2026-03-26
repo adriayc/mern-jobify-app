@@ -13,6 +13,7 @@ import customFetch from '../utils/customFetch';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 // Components
 import { FormRow, FormRowSelect, SubmitBtn } from '../components';
+import { QueryClient } from '@tanstack/react-query';
 
 // Loaders
 export const loader = async ({ params }) => {
@@ -26,21 +27,24 @@ export const loader = async ({ params }) => {
   }
 };
 // Actions
-export const action = async ({ request, params }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+export const action =
+  (queryClient) =>
+  async ({ request, params }) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
 
-  try {
-    await customFetch.patch(`/jobs/${params.id}`, data);
-    toast.success('Job edited successfully');
-
-    return redirect('/dashboard/all-jobs');
-  } catch (error) {
-    // console.log(error);
-    toast.error(error?.response?.data?.msg);
-    return error;
-  }
-};
+    try {
+      await customFetch.patch(`/jobs/${params.id}`, data);
+      // Invalidate jobs query
+      queryClient.invalidateQueries(['jobs']);
+      toast.success('Job edited successfully');
+      return redirect('/dashboard/all-jobs');
+    } catch (error) {
+      // console.log(error);
+      toast.error(error?.response?.data?.msg);
+      return error;
+    }
+  };
 
 const EditJob = () => {
   // const params = useParams();
