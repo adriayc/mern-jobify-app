@@ -7,6 +7,7 @@ const Wrapper = styled.aside`
     display: block;
     .sidebar-container {
       width: 250px;
+      height: 100%;
       min-height: 100vh;
       background: var(--background-secondary-color);
       margin-left: -250px;

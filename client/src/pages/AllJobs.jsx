@@ -7,10 +7,16 @@ import customFetch from '../utils/customFetch';
 import { SearchContainer, JobsContainer } from '../components';
 
 // Loaders
-export const loader = async () => {
+export const loader = async ({ request }) => {
+  // console.log(request.url);
+  const params = Object.fromEntries([
+    ...new URL(request.url).searchParams.entries(),
+  ]);
+  // console.log(params);
+
   try {
-    const { data } = await customFetch.get('/jobs');
-    return { data };
+    const { data } = await customFetch.get('/jobs', { params });
+    return { data, searchValues: { ...params } };
   } catch (error) {
     // console.log(error);
     toast.error(error?.response?.data?.msg);
@@ -22,11 +28,11 @@ export const loader = async () => {
 const AllJobsContext = createContext();
 
 const AllJobs = () => {
-  const { data } = useLoaderData();
-  // console.log(data);
+  const { data, searchValues } = useLoaderData();
+  // console.log(searchValues);
 
   return (
-    <AllJobsContext.Provider value={{ data }}>
+    <AllJobsContext.Provider value={{ data, searchValues }}>
       <SearchContainer />
       <JobsContainer />
     </AllJobsContext.Provider>

@@ -109,7 +109,10 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
 
         * Job (Click '...' > Add folder | Name folder: Job)
             + Get All Jobs
-                > GET: {{URL}}/jobs                                     => Click 'Send'
+                > GET: {{URL}}/jobs                                                     => Click 'Send'
+                > GET: {{URL}}/jobs?search={{JOB_POSITION || JOB.COMPANY}}              => Click 'Send'
+                > GET: {{URL}}/jobs?search={{JOB_POSITION || JOB.COMPANY}}&jobStatus=all&jobType=all                => Click 'Send'
+                > GET: {{URL}}/jobs?search={{JOB_POSITION || JOB.COMPANY}}&jobStatus=all&jobType=all&page=1&limit=10                => Click 'Send'
             + Create Job
                 > POST: {{URL}}/jobs                                    => Click 'Send'
                     > Body > Row > JSON
