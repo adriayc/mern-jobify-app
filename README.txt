@@ -27,6 +27,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install dayjs
         + Recharts
             $ npm install recharts
+        + React Query
+            $ npm i @tanstack/react-query @tanstack/react-query-devtools
 
     - Remove dependencies
         + Regular dependencies
