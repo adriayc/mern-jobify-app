@@ -1,13 +1,24 @@
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, redirect } from 'react-router-dom';
 // Wrappers
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
+// Utils
+import customFetch from '../utils/customFetch';
 // Components;
 import { FormRow, Logo } from '../components';
 
 // Actions
-export const action = async (data) => {
-  console.log(data);
-  return null;
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  // console.log(data);
+
+  try {
+    await customFetch.post('/auth/register', data);
+    return redirect('/login');
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
 };
 
 const Register = () => {
@@ -17,20 +28,20 @@ const Register = () => {
         <Logo />
         <h4>Register</h4>
         {/* NAME */}
-        <FormRow type="text" name="name" defaultValue="adriano" />
+        <FormRow type="text" name="name" defaultValue="john" />
         {/* LAST NAME */}
         <FormRow
           type="text"
           name="lastName"
           labelText="last name"
-          defaultValue="ayala"
+          defaultValue="doe"
         />
         {/* LOCATION */}
         <FormRow type="text" name="location" defaultValue="earth" />
         {/* EMAIL */}
-        <FormRow type="email" name="email" defaultValue="adriano@mail.com" />
+        <FormRow type="email" name="email" defaultValue="john@mail.com" />
         {/* PASSWORD */}
-        <FormRow type="password" name="password" defaultValue="adriano123" />
+        <FormRow type="password" name="password" defaultValue="secret123" />
         <button type="submit" className="btn btn-block">
           submit
         </button>
