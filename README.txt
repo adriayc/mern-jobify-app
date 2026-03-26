@@ -21,6 +21,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install react-icons --save
         + Axios
             $ npm install axios
+        + React Toastify
+            $ npm i --save react-toastify
 
     - Remove dependencies
         + Regular dependencies

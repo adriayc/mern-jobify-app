@@ -1,32 +1,56 @@
-import { Link } from 'react-router-dom';
+import { Form, Link, redirect, useNavigation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 // Wrappers
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
+// Utils
+import customFetch from '../utils/customFetch';
 // Components;
 import { FormRow, Logo } from '../components';
 
+// Actions
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  // console.log(data);
+
+  try {
+    await customFetch.post('/auth/register', data);
+    toast.success('Registration successful');
+    return redirect('/login');
+  } catch (error) {
+    // console.log(error);
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
+};
+
 const Register = () => {
+  const navigation = useNavigation();
+  // console.log(navigation);
+  const isSubmitting = navigation.state === 'submitting';
+
   return (
     <Wrapper>
-      <form className="form">
+      <Form method="post" className="form">
         <Logo />
         <h4>Register</h4>
         {/* NAME */}
-        <FormRow type="text" name="name" defaultValue="adriano" />
+        <FormRow type="text" name="name" defaultValue="john" />
         {/* LAST NAME */}
         <FormRow
           type="text"
           name="lastName"
           labelText="last name"
-          defaultValue="ayala"
+          defaultValue="doe"
         />
         {/* LOCATION */}
         <FormRow type="text" name="location" defaultValue="earth" />
         {/* EMAIL */}
-        <FormRow type="email" name="email" defaultValue="adriano@mail.com" />
+        <FormRow type="email" name="email" defaultValue="john@mail.com" />
         {/* PASSWORD */}
-        <FormRow type="password" name="password" defaultValue="adriano123" />
-        <button type="submit" className="btn btn-block">
-          submit
+        <FormRow type="password" name="password" defaultValue="secret123" />
+        <button type="submit" className="btn btn-block" disabled={isSubmitting}>
+          {isSubmitting ? 'submitting...' : 'submit'}
         </button>
         <p>
           Already a member?
@@ -34,7 +58,7 @@ const Register = () => {
             Login
           </Link>
         </p>
-      </form>
+      </Form>
     </Wrapper>
   );
 };

@@ -13,6 +13,8 @@ import {
   Profile,
   Admin,
 } from './pages';
+// Actions
+import { action as registerAction } from './pages/Register';
 
 // Get from local storage
 export const checkDefaultTheme = () => {
@@ -37,6 +39,7 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register />,
+        action: registerAction,
       },
       {
         path: 'login',
