@@ -93,6 +93,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm i cloudinary
         + Dayjs
             $ npm install dayjs
+        + Datauri
+            $ npm install datauri
 
     - Remove dependencies
         + Uninstall a single dependency
