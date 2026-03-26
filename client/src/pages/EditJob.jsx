@@ -5,6 +5,7 @@ import {
   //useParams
 } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useQuery } from '@tanstack/react-query';
 // Wrappers
 import Wrapper from '../assets/wrappers/DashboardFormPage';
 // Custom fetch
@@ -13,19 +14,30 @@ import customFetch from '../utils/customFetch';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 // Components
 import { FormRow, FormRowSelect, SubmitBtn } from '../components';
-import { QueryClient } from '@tanstack/react-query';
+
+// Query
+const singleJobQuery = (id) => {
+  return {
+    queryKey: ['job', id],
+    queryFn: async () => {
+      const { data } = await customFetch.get(`/jobs/${id}`);
+      return data;
+    },
+  };
+};
 
 // Loaders
-export const loader = async ({ params }) => {
-  try {
-    const { data } = await customFetch.get(`/jobs/${params.id}`);
-    return data;
-  } catch (error) {
-    // console.log(error);
-    toast.error(error?.response?.data?.msg);
-    return redirect('/dashboard/all-jobs');
-  }
-};
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    try {
+      await queryClient.ensureQueryData(singleJobQuery(params.id));
+      return params.id;
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+      return redirect('/dashboard/all-jobs');
+    }
+  };
 // Actions
 export const action =
   (queryClient) =>
@@ -49,7 +61,10 @@ export const action =
 const EditJob = () => {
   // const params = useParams();
   // console.log(params);
-  const { job } = useLoaderData();
+  const id = useLoaderData();
+  const {
+    data: { job },
+  } = useQuery(singleJobQuery(id));
 
   return (
     <Wrapper>
