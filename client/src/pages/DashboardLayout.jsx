@@ -68,6 +68,7 @@ const DashboardLayout = () => {
             <Navbar />
             <div className="dashboard-page">
               {/* OUTLET */}
+              {/* Send user value context prop */}
               <Outlet context={{ user }} />
             </div>
           </div>

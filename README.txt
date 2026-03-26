@@ -23,6 +23,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install axios
         + React Toastify
             $ npm i --save react-toastify
+        + Day.js
+            $ npm install dayjs
 
     - Remove dependencies
         + Regular dependencies
