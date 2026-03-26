@@ -77,6 +77,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm i concurrently
         + Multer
             $ npm install multer
+        + Cloudinary
+            $ npm i cloudinary
 
     - Remove dependencies
         + Uninstall a single dependency
