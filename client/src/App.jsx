@@ -19,6 +19,7 @@ import { action as loginAction } from './pages/Login';
 import { action as addJobAction } from './pages/AddJob';
 // Loaders
 import { loader as dashboardLoader } from './pages/DashboardLayout';
+import { loader as allJobsLoader } from './pages/AllJobs';
 
 // Get from local storage
 export const checkDefaultTheme = () => {
@@ -67,6 +68,7 @@ const router = createBrowserRouter([
           {
             path: 'all-jobs',
             element: <AllJobs />,
+            loader: allJobsLoader,
           },
           {
             path: 'profile',
