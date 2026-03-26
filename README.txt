@@ -129,6 +129,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                         }
             + Delete Job
                 > DELETE: {{URL}}/jobs/{{JOB_ID}}                       => Click 'Send'
+            + Get Stats
+                > GET: {{URL}}/jobs/stats                               => Click 'Send'
         * Auth (Click '...' > Add folder | Name folder: Auth)
             + Create User
                 > POST: {{URL}}/auth                                    => Click 'Send'

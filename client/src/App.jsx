@@ -68,7 +68,7 @@ const router = createBrowserRouter([
             action: addJobAction,
           },
           {
-            path: 'starts',
+            path: 'stats',
             element: <Stats />,
           },
           {
