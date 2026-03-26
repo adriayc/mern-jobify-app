@@ -2,7 +2,6 @@ import {
   Form,
   redirect,
   useLoaderData,
-  useNavigation,
   //useParams
 } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -13,7 +12,7 @@ import customFetch from '../utils/customFetch';
 // Utils
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 // Components
-import { FormRow, FormRowSelect } from '../components';
+import { FormRow, FormRowSelect, SubmitBtn } from '../components';
 
 // Loaders
 export const loader = async ({ params }) => {
@@ -47,8 +46,6 @@ const EditJob = () => {
   // const params = useParams();
   // console.log(params);
   const { job } = useLoaderData();
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
 
   return (
     <Wrapper>
@@ -75,13 +72,8 @@ const EditJob = () => {
             list={Object.values(JOB_TYPE)}
             defaultValue={job.jobType}
           />
-          <button
-            type="submit"
-            className="btn form-block form-btn"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'submitting...' : 'submit'}
-          </button>
+          {/* Submit Btn */}
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>
