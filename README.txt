@@ -75,6 +75,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install cookie-parser
         + concurrently
             $ npm i concurrently
+        + Multer
+            $ npm install multer
 
     - Remove dependencies
         + Uninstall a single dependency
