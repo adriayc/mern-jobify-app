@@ -25,6 +25,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm i --save react-toastify
         + Day.js
             $ npm install dayjs
+        + Recharts
+            $ npm install recharts
 
     - Remove dependencies
         + Regular dependencies
@@ -80,6 +82,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
             $ npm install multer
         + Cloudinary
             $ npm i cloudinary
+        + Dayjs
+            $ npm install dayjs
 
     - Remove dependencies
         + Uninstall a single dependency
@@ -129,6 +133,8 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
                         }
             + Delete Job
                 > DELETE: {{URL}}/jobs/{{JOB_ID}}                       => Click 'Send'
+            + Get Stats
+                > GET: {{URL}}/jobs/stats                               => Click 'Send'
         * Auth (Click '...' > Add folder | Name folder: Auth)
             + Create User
                 > POST: {{URL}}/auth                                    => Click 'Send'

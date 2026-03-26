@@ -4,7 +4,7 @@ const Wrapper = styled.article`
   background: var(--background-secondary-color);
   padding: 2rem;
   border-bottom: 5px solid ${(props) => props.color}; // Access prop values
-  border-radius: --var(--border-radius);
+  border-radius: var(--border-radius);
   header {
     display: flex;
     align-items: center;
