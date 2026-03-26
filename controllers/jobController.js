@@ -5,7 +5,11 @@ import dayjs from 'dayjs';
 import Job from '../models/JobModel.js';
 
 export const getAllJobs = async (req, res) => {
-  const jobs = await Job.find({ createdBy: req.user.userId });
+  console.log(req.query); // Get query params
+  const jobs = await Job.find({
+    createdBy: req.user.userId,
+    position: req.query.search,
+  });
 
   res.status(StatusCodes.OK).json({ jobs }); // 200
 };
