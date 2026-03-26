@@ -1,9 +1,12 @@
 import { redirect, useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { FaCalendarCheck, FaSuitcaseRolling } from 'react-icons/fa';
 // Wrappers
 import Wrapper from '../assets/wrappers/StatsContainer';
 // Custom fetch
 import customFetch from '../utils/customFetch';
+// Components
+import { StatItem } from '../components';
 
 // Loaders
 export const loader = async () => {
@@ -19,11 +22,23 @@ export const loader = async () => {
 
 const Admin = () => {
   const { users, jobs } = useLoaderData();
-  console.log(users, jobs);
 
   return (
     <Wrapper>
-      <h1>Admin Page</h1>
+      <StatItem
+        title="current users"
+        count={users}
+        color="#e9b949"
+        bcg="#fcefc7"
+        icon={<FaSuitcaseRolling />}
+      />
+      <StatItem
+        title="total jobs"
+        count={jobs}
+        color="#647acb"
+        bcg="#e0e8f9"
+        icon={<FaCalendarCheck />}
+      />
     </Wrapper>
   );
 };
