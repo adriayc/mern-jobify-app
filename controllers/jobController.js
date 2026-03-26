@@ -6,7 +6,7 @@ import Job from '../models/JobModel.js';
 
 export const getAllJobs = async (req, res) => {
   // Query params
-  const { search } = req.query;
+  const { search, jobStatus, jobType } = req.query;
 
   // Query object
   const queryObject = {
@@ -19,6 +19,14 @@ export const getAllJobs = async (req, res) => {
       { position: { $regex: search, $options: 'i' } },
       { company: { $regex: search, $options: 'i' } },
     ];
+  }
+  // Job status
+  if (jobStatus && jobStatus !== 'all') {
+    queryObject.jobStatus = jobStatus;
+  }
+  // Job type
+  if (jobType && jobType !== 'all') {
+    queryObject.jobType = jobType;
   }
 
   const jobs = await Job.find(queryObject);
