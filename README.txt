@@ -43,6 +43,7 @@ JOBIFY (MERN - MongoDB, Express, ReactJS and NodeJS)
         $ node server       // Run single file
         $ npm run setup-project     // Setup project
         $ npm run dev               // Run app
+        $ node populate             // Populate DB
 
     - Install dependencies
         + All libraries (Optional)
