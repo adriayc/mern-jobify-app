@@ -5,6 +5,9 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import { v2 as cloudinary } from 'cloudinary';
+// Security packages
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
 // Public
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -32,25 +35,23 @@ const __dirname = dirname(fileURLToPath(import.meta.url)); // Get path
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-app.use(express.static(path.resolve(__dirname, './public'))); // Enable public folder
+// app.use(express.static(path.resolve(__dirname, './public'))); // Enable public folder
+app.use(express.static(path.resolve(__dirname, './client/dist'))); // Enable dist folder (Front-end)
 app.use(express.json());
 app.use(cookieParser());
+// Security middlewares
+app.use(helmet());
+app.use(mongoSanitize());
 
 // Routes
-app.get('/', (req, res) => {
-  res.send('Hello world');
-});
-app.get('/api/v1/test', (req, res) => {
-  res.json({ msg: 'test route' });
-});
-
 app.use('/api/v1/jobs', authenticateUse, jobRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', authenticateUse, userRouter);
 
 // Front-end
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+  // res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
 });
 
 // Custom middlewares
